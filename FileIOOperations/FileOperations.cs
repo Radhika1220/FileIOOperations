@@ -33,6 +33,28 @@ namespace FileIOOperations
                 return false;
             }
         }
-
+        /// <summary>
+        /// Read all lines in a file
+        /// </summary>
+        public static void ReadAllLinesInFile()
+        {
+            try
+            {
+                string[] lines;
+                string path = @"C:\Users\Radhika\source\repos\FileIOOperations\FileIOOperations\FileText.txt";
+                lines = File.ReadAllLines(path);
+                if (lines.Length != 0)
+                {
+                    foreach (var i in lines)
+                    {
+                        Console.WriteLine(i + " ");
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }
