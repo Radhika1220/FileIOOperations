@@ -74,6 +74,7 @@ namespace FileIOOperations
                 text = File.ReadAllText(path);
                 if (text.Length != 0)
                 {
+                    
                     Console.WriteLine(text);
                 }
                 else
@@ -122,6 +123,30 @@ namespace FileIOOperations
                 }
             }
             catch(IOException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        /// <summary>
+        /// Read from stream reader class-reads a file content one line at a time and displayed it.
+        /// </summary>
+        public static void ReadFromStreamReader()
+        {
+            string streamReadPath= @"C:\Users\Radhika\source\repos\FileIOOperations\FileIOOperations\FileText.txt";
+            try
+            {
+                using(StreamReader reader =new StreamReader(streamReadPath))
+                {
+                    string line;
+                    Console.WriteLine("\n------------Read the file from stream reader class------\n");
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                      
+                        Console.WriteLine(line);
+                    }
+                }
+            }
+            catch(Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
