@@ -9,7 +9,8 @@ namespace FileIOOperations
             Console.WriteLine("Welcome to File IO Operations");
             string path = @"C:\Users\Radhika\source\repos\FileIOOperations\FileIOOperations\FileText.txt";
             FileOperations.FilExists(path);
-            FileOperations.ReadAllLinesInFile();
+            //FileOperations.ReadAllLinesInFile();
+            FileOperations.ReadAllTextInFile();
         }
     }
 }
