@@ -12,7 +12,7 @@ namespace FileIOOperations
         /// </summary>
         /// <param name="path"></param>
         /// <returns></returns>
-        public static bool FilExists(string path)
+        public static bool FileExists(string path)
         {
             try
             {
@@ -41,7 +41,7 @@ namespace FileIOOperations
             try
             {
                 string path = @"C:\Users\Radhika\source\repos\FileIOOperations\FileIOOperations\FileText.txt";
-                FilExists(path);
+                FileExists(path);
                 string[] lines;
                 lines = File.ReadAllLines(path);
                 if (lines.Length != 0)
@@ -69,7 +69,7 @@ namespace FileIOOperations
             try
             {
                 string path = @"C:\Users\Radhika\source\repos\FileIOOperations\FileIOOperations\FileText.txt";
-                FilExists(path);
+                FileExists(path);
                 string text;
                 text = File.ReadAllText(path);
                 if (text.Length != 0)
@@ -101,6 +101,29 @@ namespace FileIOOperations
             catch (IOException iox)
             {
                 Console.WriteLine(iox.Message);
+            }
+        }
+        /// <summary>
+        /// Delete file -To check whether the file exists or not,If delete the particular file.
+        /// </summary>
+        public static void DeleteFile()
+        {
+            try
+            {
+                string delFile= @"C:\Users\Radhika\source\repos\FileIOOperations\FileIOOperations\FileText1.txt";
+                if(FileExists(delFile))
+                {
+                    File.Delete(delFile);
+                    Console.WriteLine("File deleted");
+                }
+                else
+                {
+                    Console.WriteLine("File not found!!!");
+                }
+            }
+            catch(IOException ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
     }
