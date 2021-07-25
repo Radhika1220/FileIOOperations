@@ -14,6 +14,7 @@ namespace FileIOOperations
             Console.WriteLine("Enter 4: To copy a file from cource to destination");
             Console.WriteLine("Enter 5: To delete a file (FileText1)");
             Console.WriteLine("Enter 6: To read the file from StreamReader class");
+            Console.WriteLine("Enter 7: To write the file using StreamWriter class");
             int num = Convert.ToInt32(Console.ReadLine());
             switch(num)
             {
@@ -35,6 +36,10 @@ namespace FileIOOperations
                 case 6:
                     FileOperations.ReadFromStreamReader();
                     break;
+                case 7:
+                    FileOperations.WriteUsingStreamWriter();
+                    break;
+
                 default:
                     Console.WriteLine("Enter a valid option!!!");
                     break;

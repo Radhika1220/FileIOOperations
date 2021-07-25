@@ -151,5 +151,36 @@ namespace FileIOOperations
                 Console.WriteLine(ex.Message);
             }
         }
+        
+        /// <summary>
+        /// StreamWriter- To write in a file
+        /// </summary>
+        public static void WriteUsingStreamWriter()
+        {
+            string streamWritePath = @"C:\Users\Radhika\source\repos\FileIOOperations\FileIOOperations\FileText.txt";
+            FileStream stream=null;
+            try
+            {
+                stream = new FileStream(streamWritePath, FileMode.OpenOrCreate);
+                 using(StreamWriter writer  =new StreamWriter(stream, Encoding.UTF8))
+                {
+                    writer.WriteLine("Hello..");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                if(stream!=null)
+                {
+                    stream.Dispose();
+                }
+            }
+            string readText = File.ReadAllText(streamWritePath);
+            Console.WriteLine(readText);
+           
+        }
     }
 }
