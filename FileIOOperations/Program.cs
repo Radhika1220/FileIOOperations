@@ -42,7 +42,8 @@ namespace FileIOOperations
                     break;
                 case 8:
 
-                    CsvOperations.CsvSerailize();
+                    CsvOperations.WriteCSVOperation();
+                    CsvOperations.ImplementCSVOperation();
                     
                     break;
                 default:
