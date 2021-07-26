@@ -51,10 +51,11 @@ namespace FileIOOperations
                     JsonOperations.ReadJsonAndWriteToCSV();
                     break;
                 case 10:
+                    BinaryOperations.DeSerialization();
                     BinaryOperations.Serialization();
                     break;
-           
-                default:
+               default:
+
                     Console.WriteLine("Enter a valid option!!!");
                     break;
             }

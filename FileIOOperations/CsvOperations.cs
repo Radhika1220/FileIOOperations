@@ -1,4 +1,6 @@
+
 using System;
+
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -21,7 +23,9 @@ namespace FileIOOperations
 
             var result = csv.GetRecords<Person>().ToList();
             foreach (Person m in result)
+
             {
+              
                 Console.WriteLine("Name: {0} \t Email: {1} \t Phone Number: {2} \t Country: {3}", m.name, m.email, m.phoneNum, m.country);
             }
         }
@@ -38,8 +42,15 @@ namespace FileIOOperations
             new Person("Sumathi","suma@yahoo.com",8964856932,"India") };
             csvWrite.WriteRecords(data);
             csvWrite.NextRecord();
+
+
+        }
+
            
         }
 
     }
-}
+
+           
+
+
