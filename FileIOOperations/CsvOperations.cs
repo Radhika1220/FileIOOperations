@@ -11,12 +11,11 @@ namespace FileIOOperations
 {
     class CsvOperations
     {
-        public static string importFilePath = @"C:\Users\Radhika\source\repos\FileIOOperations\FileIOOperations\csvdata.csv";
         //Read Content of CSV File and Print
         public static void CsvDeSerailize()
         {
             //Initialization
-
+            string importFilePath = @"C:\Users\Radhika\source\repos\FileIOOperations\FileIOOperations\csvdata.csv";
             using var reader = new StreamReader(importFilePath);
             using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
             var result = csv.GetRecords<Person>().ToList();
@@ -32,13 +31,17 @@ namespace FileIOOperations
             using var writer = new StreamWriter(exportfile);
 
             using var csvWrite = new CsvWriter(writer, CultureInfo.InvariantCulture);
-            
+
             List<Person> data = new List<Person>
             {
             new Person("Sumathi","suma@yahoo.com",8964856932,"India") };
             csvWrite.WriteRecords(data);
-            csvWrite.NextRecordAsync();
+            csvWrite.NextRecord();
+            CsvDeSerailize();
+
         }
+      
+
     }
 }
 

@@ -16,6 +16,7 @@ namespace FileIOOperations
             Console.WriteLine("Enter 6: To read the file from StreamReader class");
             Console.WriteLine("Enter 7: To write the file using StreamWriter class");
             Console.WriteLine("Enter 8: To read and write in csv file");
+            Console.WriteLine("Enter 9: To read into json and written in csv file");
             int num = Convert.ToInt32(Console.ReadLine());
             switch(num)
             {
@@ -44,6 +45,9 @@ namespace FileIOOperations
 
                     CsvOperations.CsvSerailize();
                     
+                    break;
+                case 9:
+                    JsonOperations.ReadJsonAndWriteToCSV();
                     break;
                 default:
                     Console.WriteLine("Enter a valid option!!!");
