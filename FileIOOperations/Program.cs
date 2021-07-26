@@ -54,8 +54,8 @@ namespace FileIOOperations
                     BinaryOperations.DeSerialization();
                     BinaryOperations.Serialization();
                     break;
- 
-                        default:
+               default:
+
                     Console.WriteLine("Enter a valid option!!!");
                     break;
             }

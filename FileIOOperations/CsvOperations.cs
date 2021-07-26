@@ -1,4 +1,6 @@
-﻿using System;
+
+using System;
+
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -18,6 +20,7 @@ namespace FileIOOperations
 
             using var reader = new StreamReader(importFilePath);
             using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
+
             var result = csv.GetRecords<Person>().ToList();
             foreach (Person m in result)
 
@@ -40,9 +43,14 @@ namespace FileIOOperations
             csvWrite.WriteRecords(data);
             csvWrite.NextRecord();
 
+
         }
 
            
         }
 
     }
+
+           
+
+
