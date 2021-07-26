@@ -53,10 +53,7 @@ namespace FileIOOperations
                 case 10:
                     BinaryOperations.Serialization();
                     break;
-                case 11:
-                    XMLOperations.DeSerializeXML();
-                    XMLOperations.SerializeXML();
-                    break;
+           
                 default:
                     Console.WriteLine("Enter a valid option!!!");
                     break;
