@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using CsvHelper;
 
+
 namespace FileIOOperations
 {
     class CsvOperations
@@ -28,6 +29,7 @@ namespace FileIOOperations
         public static void CsvSerailize()
         {
             string exportfile = @"C:\Users\Radhika\source\repos\FileIOOperations\FileIOOperations\csvdata.csv";
+     
             using var writer = new StreamWriter(exportfile);
 
             using var csvWrite = new CsvWriter(writer, CultureInfo.InvariantCulture);

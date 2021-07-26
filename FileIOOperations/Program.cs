@@ -49,6 +49,9 @@ namespace FileIOOperations
                 case 9:
                     JsonOperations.ReadJsonAndWriteToCSV();
                     break;
+                case 10:
+                    BinaryOperations.Serialization();
+                    break;
                 default:
                     Console.WriteLine("Enter a valid option!!!");
                     break;
