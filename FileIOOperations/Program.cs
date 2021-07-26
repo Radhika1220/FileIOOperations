@@ -15,6 +15,7 @@ namespace FileIOOperations
             Console.WriteLine("Enter 5: To delete a file (FileText1)");
             Console.WriteLine("Enter 6: To read the file from StreamReader class");
             Console.WriteLine("Enter 7: To write the file using StreamWriter class");
+            Console.WriteLine("Enter 8: To read and write in csv file");
             int num = Convert.ToInt32(Console.ReadLine());
             switch(num)
             {
@@ -39,7 +40,11 @@ namespace FileIOOperations
                 case 7:
                     FileOperations.WriteUsingStreamWriter();
                     break;
+                case 8:
 
+                    CsvOperations.CsvSerailize();
+                    
+                    break;
                 default:
                     Console.WriteLine("Enter a valid option!!!");
                     break;
