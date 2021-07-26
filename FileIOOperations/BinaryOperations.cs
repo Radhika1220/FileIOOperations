@@ -26,19 +26,25 @@ namespace FileIOOperations
         public static void Serialization()
         {
             Demo demo = new Demo("Radhika", 21);
-            FileStream fileStream = new FileStream(filepath, FileMode.Create);
+            Stream ms = File.OpenWrite(filepath);
             BinaryFormatter binaryFormatter = new BinaryFormatter();
-            binaryFormatter.Serialize(fileStream, demo);
+            binaryFormatter.Serialize(ms, demo);
+            ms.Flush();
+            ms.Close();
+            ms.Dispose();
 
         }
         public static void DeSerialization()
         {
             string binarypath = @"C:\Users\Radhika\source\repos\FileIOOperations\FileIOOperations\FileData.txt";
-            FileStream deserialize = new FileStream(binarypath, FileMode.Open);
-            BinaryFormatter binaryFormatter1 = new BinaryFormatter();
-            Demo d = (Demo)binaryFormatter1.Deserialize(deserialize);
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream fs = File.Open(binarypath, FileMode.Open);
+            object obj = formatter.Deserialize(fs);
+            Demo d = (Demo)obj;
+            fs.Flush();
+            fs.Close();
+            fs.Dispose();
             Console.WriteLine("Name: {0} \t Age: {1}", d.name, d.age);
-            //Serialization();
         }
     }
     }
